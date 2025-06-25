@@ -1,118 +1,245 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" href="avatar.jpg">
-  <title>Leonardo Oliveira - Mapa e Portfolio Unicesumar</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header>
-    <img src="avatar.jpg" alt="Foto de Leonardo" class="avatar">
-    <h1>Leonardo Oliveira Santos</h1>
-    <div class="frase-balancando">
-      <p>Seria o único propósito da folha, o de cair? <img src="folha.png" alt="folha" class="emoji-frase"></p>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#sobre">Sobre</a></li>
-        <li><a href="#habilidades">Habilidades</a></li>
-        <li><a href="#projetos">Projetos</a></li>
-      </ul>
-    </nav>
-  </header>
+body {
+  margin: 0;
+  background-color: #111;
+  color: #fff;
+  font-family: 'Garamond', serif;
+  line-height: 1.6;
+}
 
-  <main>
-    <section id="sobre">
-      <h2>Sobre mim</h2>
-      <p>Olá! Me chamo Léo, muito bom ter você aqui! Esta é minha Landing Page e vou falar um pouquinho sobre mim. Sou um jovem entusiasta de 21 anos na área de tecnologia, atualmente estou exercendo atividade na área de Administração como Analista Administrativo e sou estudante de Análise e Desenvolvimento de Sistemas pela UNICESUMAR (EaD) e sou um apaixonado por tecnologia e estou adorando aprender sobre desenvolvimento web, meu objetivo atual é converter todo meu conhecimento teórico em prática nas grandes empresas!</p>
-    </section>
+header {
+  text-align: center;
+  padding: 30px 20px;
+  background-color: #1c1c1c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 
-    <section id="habilidades">
-      <h2>Habilidades</h2>
-      <ul>
-        <li>HTML5 e CSS</li>
-        <li>JavaScript</li>
-        <li>Python</li>
-        <li>Java</li>
-        <li>Front-End</li>
-      </ul>
-    </section>
+.avatar {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid #00e8f8;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+  margin-bottom: 10px;
+}
 
-    <section id="projetos">
-      <h2>Projetos</h2>
-      <div class="projeto">
-        <a href="https://drive.google.com/file/d/1VobaZXceEcGude23gIyc7iOOF9YjjTGM/view" target="_blank">
-          <h3>📁 Portfólio Pessoal</h3>
-          <p>Uma página para apresentar meus projetos e experiências como Design</p>
-        </a>
-      </div>
-      <div class="projeto">
-        <a href="https://link-da-landingpage" target="_blank">
-          <h3>🌐 Landing Page Pessoal</h3>
-          <p>Criei uma Landing Page a fim de testar minhas habilidades com HTML e CSS</p>
-        </a>
-      </div>
-      <div class="projeto">
-        <a href="https://lowe03br.github.io/Snake-Arcade/" target="_blank">
-          <h3>🎮 Jogo da Cobrinha</h3>
-          <p>Mini-game feito com HTML, CSS e JavaScript puro.</p>
-        </a>
-      </div>
-    </section>
-  </main>
+.avatar:hover {
+  transform: rotateY(180deg);
+}
 
-  <aside>
-    <h2>Curiosidades</h2>
-    <p>Gosto de tecnologia em geral, games feitos em HTML mas principalmente MOBA e RPG, usando C#, C & C++, estou estudando em como desenvolver com motores gráficos como Unity e Unreal Engine 4. Gosto de tocar violão, sair com os amigos, passar o tempo com minha esposa e sempre aprender coisas novas.</p>
-    <p><a href="https://drive.google.com/file/d/1VobaZXceEcGude23gIyc7iOOF9YjjTGM/view" target="_blank">Portfolio</a> |
-       <a href="https://www.linkedin.com/in/leonardooliveira31/" target="_blank">LinkedIn</a></p>
-  </aside>
+h1:hover {
+  animation: bounce 0.6s ease;
+}
 
-  <footer>
-    <p>Contato: leonardoenergia97@gmail.com</p>
-    <p>© 2025 Leonardo Oliveira</p>
-  </footer>
+@keyframes bounce {
+  0% { transform: translateY(0); }
+  30% { transform: translateY(-10px); }
+  50% { transform: translateY(0); }
+  70% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
 
-  <button id="reflexaoBtn">Reflexão</button>
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
 
-  <div id="popupReflexao" class="popup">
-    <div class="popup-conteudo">
-      <span class="fechar" id="fecharPopup">&times;</span>
-      <h2>Reflexão</h2>
-      <p>"Seria o único propósito da folha, o de cair?"</p>
-      <p>A frase questiona se estamos destinados apenas a falhar ou sofrer, como uma folha que só existe para cair. Ela usa a folha como metáfora para a vida humana — refletindo dor, culpa e a busca por um propósito maior.</p>
-      <ul>
-        <li><strong>Destino:</strong> estamos presos ao que nos acontece?</li>
-        <li><strong>Propósito:</strong> existe algo além da queda?</li>
-        <li><strong>Redenção:</strong> é possível recomeçar depois de errar?</li>
-      </ul>
-      <p>A mensagem é simples, mas poderosa: <strong>A queda não define quem somos.</strong> Às vezes, ela é só parte do caminho.</p>
-    </div>
-  </div>
+nav a {
+  color: #00e8f8;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
 
-  <script>
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-          window.scrollTo({ top: targetElement.offsetTop, behavior: 'smooth' });
-        }
-      });
-    });
+nav a:hover {
+  text-decoration: underline;
+}
 
-    const btn = document.getElementById("reflexaoBtn");
-    const popup = document.getElementById("popupReflexao");
-    const fechar = document.getElementById("fecharPopup");
+main, aside {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
 
-    btn.onclick = () => { popup.style.display = "block"; }
-    fechar.onclick = () => { popup.style.display = "none"; }
-    window.onclick = (event) => {
-      if (event.target === popup) { popup.style.display = "none"; }
-    }
-  </script>
-</body>
-</html>
+h2 {
+  color: #00e8f8;
+  border-bottom: 2px solid #00e8f8;
+  padding-bottom: 5px;
+}
+
+.projeto {
+  background-color: #1c1c1c;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.projeto:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 10px #00e8f8;
+}
+
+.projeto a {
+  color: white;
+  text-decoration: none;
+  display: block;
+}
+
+aside {
+  background-color: #1c1c1c;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+aside a {
+  color: #00e8f8;
+  margin: 0 10px;
+  text-decoration: none;
+}
+
+aside a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  background-color: #1c1c1c;
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+}
+
+.reflexao-container {
+  position: relative;
+  height: 80px; /* espaço visível pra posicionar o botão */
+}
+
+#reflexaoBtn {
+  position: absolute;
+  bottom: -1050px;
+  right: 250px;
+  background-color: #00e8f8;
+  color: #000000;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 300px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 0 10px #00e8f8;
+  z-index: 10;
+  transition: background-color 0.3s;
+}
+
+#reflexaoBtn:hover {
+  background-color: #00cfd8;
+}
+
+/* Pop-up */
+.popup {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 17, 17, 0.9);
+}
+
+.popup-conteudo {
+  background-color: #1c1c1c;
+  margin: 10% auto;
+  padding: 30px;
+  border: 1px solid #00e8f8;
+  width: 90%;
+  max-width: 600px;
+  border-radius: 15px;
+  box-shadow: 0 0 15px #00e8f8;
+}
+
+.popup-conteudo h2 {
+  color: #00e8f8;
+}
+
+.popup-conteudo ul {
+  padding-left: 20px;
+}
+
+.popup-conteudo li {
+  margin-bottom: 10px;
+}
+
+.fechar {
+  color: #00e8f8;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.frase-vento {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: -30px;
+  flex-wrap: wrap;
+}
+
+.texto-vento {
+  display: inline-block;
+  animation: balancarTexto 4s ease-in-out infinite;
+}
+
+.emoji-frase {
+  width: 24px;
+  height: 24px;
+  animation: cairFolha 2.5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Animação suave do texto, simulando vento */
+@keyframes balancarTexto {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(1.5deg); }
+  50% { transform: rotate(-1.5deg); }
+  75% { transform: rotate(1.5deg); }
+}
+
+/* Movimento suave de queda/flutuação da folha */
+@keyframes cairFolha {
+  0%   { transform: translateY(0) rotate(0deg); }
+  25%  { transform: translateY(2px) rotate(10deg); }
+  50%  { transform: translateY(4px) rotate(-10deg); }
+  75%  { transform: translateY(2px) rotate(5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
+  .avatar {
+    width: 90px;
+    height: 90px;
+  }
+
+  main, aside {
+    padding: 0 15px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .popup-conteudo {
+    margin-top: 20%;
+    padding: 20px;
+  }
+}
