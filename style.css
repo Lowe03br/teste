@@ -116,19 +116,25 @@ footer {
   font-size: 14px;
 }
 
+.reflexao-container {
+  position: relative;
+  height: 80px; /* espaço visível pra posicionar o botão */
+}
+
 #reflexaoBtn {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
+  position: absolute;
+  bottom: -1050px;
+  right: 250px;
   background-color: #00e8f8;
-  color: #000;
+  color: #000000;
   border: none;
   padding: 10px 20px;
-  border-radius: 30px;
+  border-radius: 300px;
   cursor: pointer;
   font-weight: bold;
   box-shadow: 0 0 10px #00e8f8;
-  z-index: 1000;
+  z-index: 10;
+  transition: background-color 0.3s;
 }
 
 #reflexaoBtn:hover {
@@ -178,15 +184,42 @@ footer {
   cursor: pointer;
 }
 
-.emoji-frase {
-  width: 20px;
-  height: 20px;
-  animation: cair 2s infinite ease-in-out;
+.frase-vento {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: -30px;
+  flex-wrap: wrap;
 }
 
-@keyframes cair {
-  0%, 100% { transform: translateY(0) rotate(0deg); }
-  50% { transform: translateY(4px) rotate(15deg); }
+.texto-vento {
+  display: inline-block;
+  animation: balancarTexto 4s ease-in-out infinite;
+}
+
+.emoji-frase {
+  width: 24px;
+  height: 24px;
+  animation: cairFolha 2.5s ease-in-out infinite;
+  transform-origin: center;
+}
+
+/* Animação suave do texto, simulando vento */
+@keyframes balancarTexto {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(1.5deg); }
+  50% { transform: rotate(-1.5deg); }
+  75% { transform: rotate(1.5deg); }
+}
+
+/* Movimento suave de queda/flutuação da folha */
+@keyframes cairFolha {
+  0%   { transform: translateY(0) rotate(0deg); }
+  25%  { transform: translateY(2px) rotate(10deg); }
+  50%  { transform: translateY(4px) rotate(-10deg); }
+  75%  { transform: translateY(2px) rotate(5deg); }
+  100% { transform: translateY(0) rotate(0deg); }
 }
 
 /* Responsivo */
