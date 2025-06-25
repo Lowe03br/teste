@@ -116,14 +116,16 @@ footer {
   font-size: 14px;
 }
 
+/* Container para controlar posição do botão */
 .reflexao-container {
   position: relative;
-  height: 80px; /* espaço visível pra posicionar o botão */
+  height: 80px;
 }
 
+/* Estilo original do botão - desktop */
 #reflexaoBtn {
   position: absolute;
-  bottom: -1050px;
+  bottom: -1050px; /* Mantém posição exata no PC */
   right: 250px;
   background-color: #00e8f8;
   color: #ffffff;
@@ -139,6 +141,21 @@ footer {
 
 #reflexaoBtn:hover {
   background-color: #00cfd8;
+}
+
+/* Responsivo: mobile */
+@media (max-width: 768px) {
+  #reflexaoBtn {
+    position: static; /* Remove posicionamento absoluto */
+    display: block;
+    margin: 30px auto 0; /* Centraliza */
+    font-size: 14px;
+    padding: 10px 22px;
+  }
+
+  .reflexao-container {
+    height: auto; /* Deixa altura natural no mobile */
+  }
 }
 
 /* Pop-up */
@@ -244,11 +261,3 @@ footer {
   }
 }
 
-@media (max-width: 600px) {
-  #reflexaoBtn {
-    bottom: -100px; /* Ajuste fino para mobile */
-    right: 20px;
-    padding: 8px 16px;
-    font-size: 14px;
-  }
-}
